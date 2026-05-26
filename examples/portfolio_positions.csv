@@ -1,0 +1,21 @@
+Ticker,Company,Weight,Sector,Beta,ADV_30D_Shares,Position_Size_Shares
+AAPL,Apple Inc.,0.040,Technology,1.15,55000000,165000
+MSFT,Microsoft Corp.,0.038,Technology,1.10,28000000,105000
+JPM,JPMorgan Chase & Co.,0.035,Financials,1.20,11000000,218000
+NVDA,NVIDIA Corp.,0.030,Technology,1.80,62000000,320000
+PG,Procter & Gamble Co.,-0.025,Consumer Staples,0.55,6500000,-152000
+XOM,Exxon Mobil Corp.,-0.020,Energy,1.05,18000000,-168000
+JNJ,Johnson & Johnson,-0.025,Healthcare,0.60,8200000,-155000
+AMZN,Amazon.com Inc.,0.035,Consumer Discretionary,1.25,35000000,192000
+LLY,Eli Lilly & Co.,0.020,Healthcare,1.10,3200000,22500
+WMT,Walmart Inc.,-0.015,Consumer Staples,0.50,9500000,-182000
+CVX,Chevron Corp.,-0.020,Energy,1.00,10000000,-132000
+HD,Home Depot Inc.,0.025,Consumer Discretionary,0.95,4500000,68000
+MRK,Merck & Co.,-0.015,Healthcare,0.55,7500000,-125000
+V,Visa Inc.,0.020,Financials,1.02,5200000,75000
+KO,Coca-Cola Co.,-0.010,Consumer Staples,0.52,12000000,-165000
+PEP,PepsiCo Inc.,-0.010,Consumer Staples,0.55,5500000,-58000
+ABBV,AbbVie Inc.,0.020,Healthcare,0.78,6100000,110000
+MCD,McDonald's Corp.,-0.010,Consumer Discretionary,0.62,3200000,-35000
+CSCO,Cisco Systems Inc.,-0.015,Technology,0.92,16000000,-320000
+AMD,Advanced Micro Devices,0.015,Technology,1.90,52000000,115000

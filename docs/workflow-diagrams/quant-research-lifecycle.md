@@ -1,6 +1,6 @@
 # Quantitative Research Lifecycle & Governance Workflow
 
-This document visualizes the institutional validation workflow implemented by **FinStack**. In elite financial institutions, no strategy is allowed to trade until it successfully runs this linear gauntlet.
+This document visualizes the institutional validation workflow implemented by this framework. In elite financial institutions, no strategy is allowed to trade until it successfully runs this linear gauntlet.
 
 ---
 
