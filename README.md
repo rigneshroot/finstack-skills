@@ -7,7 +7,7 @@
 ---
 
 ### **Author: Rignesh P**  
-*Quantitative Systems Architect (Project-Based)*
+*Quantitative Systems Architect (Research-Based)*
 
 ---
 
