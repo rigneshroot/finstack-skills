@@ -139,7 +139,22 @@ $$\text{PR-Score} = \text{Data Integrity} \times 0.20 + \text{Validation Quality
    * **Asset Managers:** `/portfolio-allocation-committee`, `/factor-decomposer`, `/benchmark-tracking-auditor`
    * **Investment Banks:** `/ccar-stress-tester`, `/regulatory-controls-reviewer`, `/algorithmic-trading-validator`
 
+### Specialized Skill Dashboards
+
+#### Hedge Fund Signal & Execution Dashboard
+*Linked to: `/market-microstructure-analyst`, `/liquidity-risk-officer`, `/alpha-decay-reviewer`*
+![Hedge Fund Dashboard](docs/assets/hedge-funds.png)
+
+#### Asset Management Allocation & Factor Matrix
+*Linked to: `/portfolio-allocation-committee`, `/factor-decomposer`*
+![Asset Management Matrix](docs/assets/asset-managers.png)
+
+#### Investment Bank Risk & Regulatory Validation
+*Linked to: `/regulatory-controls-reviewer`, `/ccar-stress-tester`*
+![Investment Bank Risk Validation](docs/assets/investment-banks.png)
+
 ---
+
 
 ## Credits
 
