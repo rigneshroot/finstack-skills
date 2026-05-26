@@ -162,6 +162,32 @@ Inspired by [garrytan/gstack](https://github.com/garrytan/gstack). This framewor
 
 ---
 
+## Academic & Regulatory Citations
+
+This framework incorporates methodologies, mathematical models, and regulatory guidelines derived from the following foundational literature:
+
+### 1. Model Risk & Governance Standards
+*   **Federal Reserve Board (FRB) / Office of the Comptroller of the Currency (OCC)** (2011). *Supervisory Guidance on Model Risk Management*. Federal Reserve System Supervisory Letter SR 11-7 / OCC Bulletin 2011-12. [FRB SR 11-7](https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm).
+*   **Prudential Regulation Authority (PRA)** (2023). *Model Risk Management Principles for Banks*. UK PRA Supervisory Statement SS 1/23.
+
+### 2. Forensic Backtesting & Selection Bias
+*   **Bailey, D. H., & Lopez de Prado, M. M.** (2014). *The Deflated Sharpe Ratio: Correcting for Selection Bias, Backtest Overfitting, and Non-Normality*. Journal of Portfolio Management, 40(5), 94-107.
+*   **Lopez de Prado, M. M.** (2018). *Advances in Financial Machine Learning*. John Wiley & Sons. *(Focus on Purged and Embargoed Walk-Forward Cross-Validation methods)*.
+
+### 3. Transaction Costs & Market Microstructure
+*   **Almgren, R., & Chriss, N.** (2000). *Optimal Execution of Portfolio Transactions*. Journal of Risk, 3, 5-40. *(Foundational framework for non-linear temporary and permanent market impact modeling)*.
+*   **Easley, D., Lopez de Prado, M. M., & O’Hara, M.** (2012). *Flow Toxicity and Liquidity in a High-Frequency World*. The Review of Financial Studies, 25(5), 1457-1493. *(Foundational Volume-Synchronized Probability of Toxicity - VPIN framework)*.
+
+### 4. Systematic Factors & Portfolio Allocation
+*   **Fama, E. F., & French, K. R.** (2015). *A Five-Factor Asset Pricing Model*. Journal of Financial Economics, 116(1), 1-22. *(Systematic factor decomposition and beta attribution)*.
+*   **Kelly, J. L.** (1956). *A New Interpretation of Information Rate*. Bell System Technical Journal, 35(4), 917-926. *(Capital growth sizing boundaries)*.
+
+### 5. Regulatory Compliance & Market Integrity
+*   **Securities and Exchange Commission (SEC)** (2010). *Risk Management Controls for Brokers or Dealers with Market Access*. SEC Rule 15c3-5, 17 CFR Part 240. [SEC Rule 15c3-5](https://www.sec.gov/rules/final/2010/34-63241.pdf).
+*   **European Securities and Markets Authority (ESMA)** (2018). *Markets in Financial Instruments Directive II (MiFID II)*. Commission Delegated Regulation (EU) 2017/589 (RTS 6 - Algorithmic Trading Systems).
+
+---
+
 ## License
 
 MIT
