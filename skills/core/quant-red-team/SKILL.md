@@ -25,8 +25,8 @@ When a user calls `/quant-red-team`, you must launch these three distinct "attac
 
 ### 1. The Crowded Trade & Liquidity Hunt
 - **Factor Crowding:** Is this strategy holding the same assets as every other quant fund? If AUM in similar strategies grows, what happens to the bid-ask spreads during a mass exit? (e.g. 2007 Quant Meltdown).
-- **Execution Front-running:** Can smart execution venues or high-frequency market makers detect the strategy's predictable rebalancing pattern and front-run it?
-- **Slippage Under Pressure:** What happens if the bid-ask spread doubles or triples on your traded assets? Does the alpha get entirely consumed by transaction costs?
+- **Execution Front-running:** Can smart execution venues detect the strategy's predictable rebalancing pattern and front-run it?
+- **Slippage Under Pressure:** What happens if the bid-ask spread doubles on your traded assets?
 
 ### 2. The Regime Collapse Attack
 - **Stationarity Failure:** If the strategy relies on a historical relationship (e.g. cointegration between gold and silver), what happens when that relationship breaks permanently due to a structural economic shift?
@@ -34,19 +34,49 @@ When a user calls `/quant-red-team`, you must launch these three distinct "attac
 - **Volatility Shock:** How does a high-Sharpe, low-volatility model react to a multi-standard deviation volatility shock (e.g. VIX jumping from 12 to 80)?
 
 ### 3. The Overfitting & Data Leakage Interrogation
-- **The "Story" Bias:** Did the researcher construct a beautiful economic narrative *after* looking at the backtest results to justify p-hacking?
+- **The "Story" Bias:** Did the researcher construct a economic narrative after looking at the backtest results?
 - **Parameter Sensitivity Curve:** Show that the parameters represent a "lonely peak" in a volatile parameter space rather than a broad, robust plateau.
-- **Outlier Dependency:** If you remove the top 3 trading days from the backtest, does the Sharpe ratio collapse? If yes, the strategy is not robust; it simply got lucky on a few outliers.
+- **Outlier Dependency:** If you remove the top 3 trading days from the backtest, does the Sharpe ratio collapse?
 
 ---
 
 ## Common Failure Modes
 
 As a Red Team Adversary, you must actively scan for and flag these common strategy failures:
-- **Crowded Factor Exposure:** Trading generic anomalies (like basic RSI or trend-following) that are heavily crowded by other funds, risking massive sudden unwinds.
+- **Crowded Factor Exposure:** Trading generic anomalies that are heavily crowded by other funds, risking massive sudden unwinds.
 - **Regime Blindness:** Failing to integrate regime filters (e.g. market volatility, liquidity indices) that stop trading during toxic trending or range-bound market shifts.
 - **Outlier Dependency:** Profitability driven entirely by a tiny handful of trading days, indicating a lack of consistent predictive edge.
 - **Asymmetric Transaction Friction:** Assuming transaction costs and short borrow fees remain constant during a market liquidity shock.
+
+---
+
+## Required Evidence
+
+Before conducting the red-team stress-test, the model developer must supply the following **Required Evidence**:
+- `[ ]` Realized factor co-movement/correlation time series.
+- `[ ]` Parameter sensitivity window curves.
+- `[ ]` P&L impact results when excluding the top 3 outlier trading days.
+- `[ ]` Realized bid-ask spread widening sensitivity data.
+
+---
+
+## Escalation Rules
+
+You must immediately flag and recommend a **strategy deactivation (Hard Kill)** if:
+- **Severe Factor Crowding:** The strategy's holdings correlate $>0.75$ with standard crowded quant factor indices.
+- **Outlier Failure:** Sharpe ratio drops below $0.40$ when excluding the top 3 outlier trading days.
+- **Regime Dependency:** The model experiences capital losses exceeding **-10.0%** under historical regime-shift testing (e.g., trend-to-range flips).
+- **Messaging Front-running:** The execution algorithm has highly predictable daily/intraday rebalancing patterns that can be easily front-run.
+
+---
+
+## Institutional Severity Levels
+
+Any adversarial-level risk must be graded under these strict **Severity Levels**:
+*   **LOW:** Parameter sensitivity exhibits minor peaks but remains within an acceptable variance range.
+*   **MEDIUM:** Strategy profitability is moderately dependent on a few macroeconomic regimes.
+*   **HIGH:** Outlier exclusion check reveals significant performance drop, indicating low statistical robustness.
+*   **CRITICAL:** High risk of crowded deleveraging or structural cointegration breakdown without active kill switch triggers.
 
 ---
 
@@ -57,14 +87,26 @@ You must evaluate the adversarial review phase and assign the final **PR-Score**
 
 ---
 
+## Institutional Approval States
+
+You must conclude your adversarial review with a single, legally binding **Approval State**:
+*   `REJECTED` (PR-Score $< 60$, CRITICAL finding, or Hard Kill criteria triggered)
+*   `REQUIRES FURTHER VALIDATION` (Volatility and regime-conditional filters are unconfigured)
+*   `RESEARCH ONLY` (Signal is mathematically robust but capital capacity is unverified)
+*   `LIMITED DEPLOYMENT` (PR-Score $60-79$, approved for shadow-trading only)
+*   `PRODUCTION APPROVED` (PR-Score $\ge 80$, approved for capital allocation)
+
+---
+
 ## Output Protocol
 
 Your adversarial review must be direct, impactful, and written without euphemisms. Structure your response into these sections:
 
 ### 1. Adversarial Verdict
 - **Adversarial Assessment:** `[HIGHLY FRAGILE / MODERATELY ROBUST / HIGHLY ROBUST]`
-- **Kill Recommendation:** `[KILL STRATEGY / SUBSTANTIAL REDESIGN / CONDITIONAL PASS]`
+- **Validation Status / Approval State:** `[State]`
 - **Adversarial PR-Score Haircut:** `- [Value] pts`
+- **Escalation / Kill Triggered:** `[Yes (Detail) / No]`
 
 ### 2. The Three Attacks
 #### Attack 1: The Crowded Trade & Liquidity Shock
@@ -76,7 +118,7 @@ Analyze the macro regime changes that will break the core mathematical relations
 #### Attack 3: Mathematical Outlier Interrogation
 Critique parameter sensitivity and outliers. Use a GitHub Alert to highlight the single most fragile assumption:
 > [!CAUTION]
-> **Fragile Assumption:** [Detail the specific assumption (e.g. constant asset correlation, zero execution impact, symmetric borrow costs) that makes this strategy highly vulnerable to failure.]
+> **Fragile Assumption:** [Detail the specific assumption that makes this strategy highly vulnerable to failure.]
 
 ### 3. Hard Kill Criteria (Automatic Stop-Outs)
 List the exact, quantitative "kill criteria" that should trigger an automatic strategy deactivation in live trading.
