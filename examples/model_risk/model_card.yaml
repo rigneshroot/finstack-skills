@@ -1,0 +1,56 @@
+# FinStack Institutional Model Card Schema
+# Compliant with FRB SR 11-7 model governance guidelines
+
+model_identity:
+  model_id: "EQ_MR_RSI20_US_LC"
+  model_name: "S&P 500 Short-Term RSI Reversal Model"
+  version: "1.0.2"
+  owner_desk: "Equity Systematic Alpha Desk"
+  primary_author: "Dr. Alan Vance"
+  status: "Under Independent Validation"
+  intended_use: "Bilateral long/short market-neutral equity mean reversion using liquid US large-caps."
+
+mathematical_specification:
+  signal_type: "Statistical Arbitrage / Mean Reversion"
+  core_indicator: "Relative Strength Index (RSI-20)"
+  normalization_method: "Cross-sectional Z-Score Winsorized at +/- 3.0 standard deviations"
+  frequency: "Daily Rebalance (VWAP Execution)"
+  leverage_ratio:
+    max_gross: 1.5
+    max_net: 0.1
+
+data_lineage:
+  inputs:
+    - name: "Adjusted Close Prices"
+      source: "CRSP Point-in-Time Database"
+      refresh_rate: "Daily at 16:30 EST"
+    - name: "Average Daily Volume (30-day ADV)"
+      source: "Reuters Equity Microstructure API"
+      refresh_rate: "Daily"
+  outputs:
+    - name: "Target Portfolio Weights"
+      destination: "Institutional Order Management System (OMS)"
+
+model_boundaries_and_limits:
+  hard_limits:
+    - name: "Maximum Realized Volatility"
+      metric: "Realized 5-day Volatility"
+      bound: "30.0% annualized"
+      action: "Automatic strategy suspension (Kill Switch)"
+    - name: "Maximum Asset Concentration"
+      metric: "Single constituent portfolio weight"
+      bound: "4.0%"
+      action: "Order execution rejection"
+  operational_assumptions:
+    assumed_correlation_stability: "Assumes historical equity covariance holds under stress. Subject to breakdown in liquidations."
+    borrow_availability: "Requires General Collateral short inventory. Illiquid or Hard-to-Borrow (HTB) tickers are banned."
+    margin_model: "TIMS Portfolio Margining (Zero Threshold CSA)"
+
+ongoing_monitoring_parameters:
+  drift_metrics:
+    - metric: "Population Stability Index (PSI)"
+      warning_threshold: 0.15
+      recalibration_threshold: 0.25
+    - metric: "Live vs. Simulated Tracking Error"
+      warning_threshold: "2.5% annualized"
+      recalibration_threshold: "4.0% annualized"

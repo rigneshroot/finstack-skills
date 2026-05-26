@@ -1,51 +1,45 @@
-# FinStack Skills Responsibility Map
+# FinStack Skills Responsibility & Scorecard Mapping
 
-This document defines the roles, primary responsibilities, and key checklists for the entire FinStack Skills catalog.
-
----
-
-## Core Skills (Cross-Cutting)
-
-| Slash Command | Specialist Role | Primary Responsibility | Key Checklist focus |
-|---|---|---|---|
-| `/quant-research-director` | **Research Director** | Evaluates economic thesis and out-of-sample validation design | Stationarity, economic anomaly, parameter sensitivity |
-| `/backtest-auditor` | **Backtest Auditor** | Forensic check for data leaks, survivorship, and lookahead biases | Target leakage, timing lag, delisting bias, p-hacking |
-| `/model-risk-officer` | **Model Risk Officer** | Regulatory governance in compliance with **SR 11-7** framework | Conceptual soundness, drift monitoring, model bounds |
-| `/portfolio-risk-manager` | **Portfolio Risk Manager** | Portfolio concentration, leverage, tail-risk, and liquidity caps | Expected Shortfall (ES), 10% ADV limits, stress replays |
-| `/quant-red-team` | **Red Team Adversary** | Adversarial stress-testing to break strategy assumptions | Factor crowdedness, regime shift failure, kill criteria |
+This document maps all 14 FinStack Skills to their respective **PR-Score** components, primary **Common Failure Modes**, and key **Regulatory/Risk Covenants**.
 
 ---
 
-## Hedge Fund Vertical (`skills/hedge-funds/`)
+## 1. Core Governance Pipeline
 
-*Focused on speed, capacity constraints, execution microstructure, and alternative datasets.*
-
-| Slash Command | Specialist Role | Primary Responsibility | Key Checklist focus |
-|---|---|---|---|
-| `/alpha-decay-monitor` | **Decay & Capacity Specialist** | Monitors alpha half-life and capacity-AUM scaling elasticity | Predictive decay curve, ADV scaling, crowded factor co-movement |
-| `/execution-optimizer` | **Microstructure Analyst** | TCM audits, spread-crossing, borrow rates, and leverage | Non-linear market impact, HTB borrow locate costs, SPAN margins |
-| `/alternative-data-auditor` | **Alt-Data Auditor** | Point-in-time database integrity and MNPI compliance | Creation timestamps, web-scraping legality, panel attrition |
-
----
-
-## Asset Manager Vertical (`skills/asset-managers/`)
-
-*Focused on mandate compliance, style purity, and environmental/social scoring.*
-
-| Slash Command | Specialist Role | Primary Responsibility | Key Checklist focus |
-|---|---|---|---|
-| `/factor-decomposer` | **Factor Attribution Analyst** | Systematic return decomposition and style drift auditing | Fama-French 5-Factor loadings, Style Drift Index (SDI) |
-| `/benchmark-tracking-auditor` | **Benchmark Mandate Auditor** | Portfolio Active Share and tracking error constraints | UCITS 5/10/40 rule, tracking error bounds, closet indexing |
-| `/esg-mandate-reviewer` | **ESG Integration Officer** | Sustainability metric compliance and exclusion checking | Weighted average carbon intensity (WACI), SFDR Article 8/9 |
+| Slash Command | specialist Role | PR-Score component | Primary Failure Mode Checked | Regulatory Covenant |
+|---|---|---|---|---|
+| `/quant-research-director` | **Research Director** | Validation Quality | Story Bias & CDF Normalization | **SR 11-7** Conceptual Soundness |
+| `/backtest-auditor` | **Backtest Auditor** | Data Integrity & Execution Assumptions | Same-Bar execution lookahead bias | **MiFID II** Best Execution |
+| `/model-risk-officer` | **Model Risk Officer** | Governance Evidence | Assumption Over-reliance & Drift | **SR 11-7** Model Validation |
+| `/portfolio-risk-manager` | **Portfolio Risk Manager** | Risk Controls | Tail correlation convergence & ADV limits | **Basel III** Liquidity & Volatility |
+| `/quant-red-team` | **Red Team Adversary** | Composite Haircut | Crowded trades & Outlier dependency | Institutional Risk Covenants |
 
 ---
 
-## Investment Bank Vertical (`skills/investment-banks/`)
+## 2. Hedge Fund Vertical (`skills/hedge-funds/`)
 
-*Focused on macro stress-testing, counterparty pricing adjustments (XVA), and electronic safety controls.*
+| Slash Command | specialist Role | PR-Score component | Primary Failure Mode Checked | Core Focus |
+|---|---|---|---|---|
+| `/alpha-decay-monitor` | **Decay Specialist** | Execution Assumptions | Turnover Churn Bleed & ADV scaling | Signal half-life decay elasticity |
+| `/execution-optimizer` | **Microstructure Analyst** | Execution Assumptions | Short Locate over-optimism & SPAN Margins | TCM market impact modeling |
+| `/alternative-data-auditor` | **Alt-Data Auditor** | Data Integrity | Lookback Delivery Delay (Lookahead) | **SEC MNPI** Insider & PII checks |
 
-| Slash Command | Specialist Role | Primary Responsibility | Key Checklist focus |
-|---|---|---|---|
-| `/ccar-stress-tester` | **Stress-Testing Specialist** | Replaying portfolios under CCAR/DFAST stress scenarios | Severely Adverse shocks, Tier 1 capital RWA drawdowns |
-| `/counterparty-risk-officer` | **Counterparty & XVA Analyst** | Netting, CSA term audits, and CVA pricing adjustments | Peak Forward Exposure (PFE), Wrong-Way Risk (WWR), Zero CSAs |
-| `/algorithmic-trader-validator` | **Algo Compliance Officer** | Pre-trade risk controls and market manipulation detection | SEC Rule 15c3-5, infinite loop throttle, spoofing patterns |
+---
+
+## 3. Asset Manager Vertical (`skills/asset-managers/`)
+
+| Slash Command | specialist Role | PR-Score component | Primary Failure Mode Checked | Regulatory Covenant |
+|---|---|---|---|---|
+| `/factor-decomposer` | **Factor Analyst** | Governance Evidence | Unhedged Sector bets (Sector Proxying) | **GIPS** return reporting rules |
+| `/benchmark-tracking-auditor` | **Mandate Auditor** | Risk Controls | Closet indexing & cash drag dilutions | **UCITS 5/10/40** concentration bounds |
+| `/esg-mandate-reviewer` | **ESG Integration Officer** | Governance Evidence | Greenwashing Derivative Loops | **SFDR Article 8/9** compliance |
+
+---
+
+## 4. Investment Bank Vertical (`skills/investment-banks/`)
+
+| Slash Command | specialist Role | PR-Score component | Primary Failure Mode Checked | Regulatory Covenant |
+|---|---|---|---|---|
+| `/ccar-stress-tester` | **Stress Specialist** | Risk Controls | Linear Greek assumption breakdowns | **Fed CCAR / DFAST** stress shock |
+| `/counterparty-risk-officer` | **Counterparty Analyst** | Governance Evidence | Severe Wrong-Way Risk (WWR) | **Uncleared Margin Rules (UMR)** SIMM |
+| `/algorithmic-trader-validator` | **Algo Validator** | Risk Controls | Infinite Message Looping (Knight Capital) | **SEC Rule 15c3-5** Market Access |
