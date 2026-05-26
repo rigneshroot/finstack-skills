@@ -4,6 +4,13 @@
 [![Governance Standard: SR 11-7](https://img.shields.io/badge/Governance-SR%2011--7-red.svg)](https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm)
 [![Market Integrity: SEC 15c3-5](https://img.shields.io/badge/Compliance-SEC%2015c3--5-green.svg)](https://www.sec.gov/rules/final/2010/34-63241.pdf)
 
+---
+
+### **Author: Rignesh P**  
+*Primary Architect & Quantitative Governance Director*
+
+---
+
 > "The best quant strategies don't die in production because of bad math. They die because nobody stress-tested the assumptions, nobody audited the backtest, and nobody asked 'what kills this trade?'" — Every Portfolio Manager who lost money on a crowded factor.
 
 Wall Street runs on independent review committees, risk sign-offs, and adversarial challenge. A systematic strategy doesn't touch a single dollar of live capital until a research director evaluates the economic thesis, a backtest auditor checks for statistical biases, a model risk officer signs the governance review, a portfolio risk manager sizes the exposure, and a red team tries to kill it. 
@@ -22,12 +29,23 @@ Traditional AI coding assistants focus on **strategy generation** (writing more 
 
 ---
 
-## Inspiration
+## Visualizing the Verticals
 
-FinStack is inspired by Y Combinator CEO Garry Tan's [gstack](https://github.com/garrytan/gstack), which structures AI agents into a virtual engineering team (CEO, designer, EM, QA, release engineer). FinStack applies this same paradigm to **institutional quantitative finance** — turning your AI coding assistant into a virtual investment committee and model risk validation desk.
+### 1. Hedge Fund Dashboard (`skills/hedge-funds/`)
+Focuses on high-speed trade execution, real-time alpha signal decay indicators, HFT order streams, volatility arbitrage metrics, and market depth tracking.
+![Hedge Fund Dashboard](docs/assets/hedge-funds.png)
 
-*   `gstack` asks: _"Does this code ship?"_
-*   `FinStack` asks: _"Does this strategy survive?"_
+---
+
+### 2. Asset Management Matrix (`skills/asset-managers/`)
+Focuses on balanced multi-asset portfolio allocations, sector diversification factor grids, geometric risk attribution modeling, and standard GIPS benchmark comparisons.
+![Asset Management Matrix](docs/assets/asset-managers.png)
+
+---
+
+### 3. Investment Bank Risk Validation (`skills/investment-banks/`)
+Focuses on CCAR/DFAST severely adverse macroeconomic stress matrices, bilateral Credit Valuation Adjustments (CVA) curves, global capital contagion networks, and Basel III capital adequacy ratios.
+![Investment Bank Risk Validation](docs/assets/investment-banks.png)
 
 ---
 
@@ -58,9 +76,10 @@ finstack-skills/
 │   └── investment-banks/               # Vertical: Macro Stress & Clearing Risk
 │       ├── ccar-stress-tester/         # CCAR/DFAST macro stress shock replays
 │       ├── counterparty-risk-officer/  # Peak Exposure, Wrong-Way Risk, & CVA
-│       └── algorithmic-trader-validator/ # SEC Rule 15c3-5 pre-trade bounds
+│       └── algorithmic-trading-validator/ # SEC Rule 15c3-5 pre-trade bounds
 │
 ├── docs/
+│   ├── assets/                         # Visual assets & vertical dashboards
 │   ├── workflow-diagrams/              # Mermaid visualizations of the Quant Lifecycle
 │   ├── institutional-framework.md      # Regulatory alignments (Basel III, SR 11-7)
 │   └── skill-map.md                    # Full skill-to-role responsibility matrix
@@ -101,7 +120,7 @@ $$\text{PR-Score} = \text{Data Integrity} \times 0.20 + \text{Validation Quality
 3. Run specialized audits as needed:
    * **Hedge Funds:** `/alpha-decay-monitor` or `/execution-optimizer`
    * **Asset Managers:** `/factor-decomposer` or `/benchmark-tracking-auditor`
-   * **Investment Banks:** `/ccar-stress-tester` or `/algorithmic-trader-validator`
+   * **Investment Banks:** `/ccar-stress-tester` or `/algorithmic-trading-validator`
 
 ---
 
