@@ -7,7 +7,7 @@
 ---
 
 ### **Author: Rignesh P**  
-*Primary Architect & Quantitative Governance Director*
+*Quantitative Systems Architect*
 
 ---
 
