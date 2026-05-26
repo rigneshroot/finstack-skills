@@ -94,13 +94,16 @@ finstack-skills/
 │   ├── workflow-diagrams/          # Mermaid visualizations of the Quant Lifecycle
 │   └── skill-map.md                # Full skill-to-role responsibility matrix
 │
-├── examples/                       # Real Institutional Example Artifacts (JSON/YAML/CSV)
-│   ├── backtest_audit/             # Strategy report, audit output, & findings.json
-│   ├── model_risk/                 # YAML model cards & validation reports
-│   └── portfolio_review/           # Real CSV positions & stressed ES reports
+├── examples/                       # Real Institutional Example Artifacts
+│   ├── backtest-audit/             # Strategy summary, audit output, & findings.json
+│   ├── model-risk/                 # Model card, validation report, assumptions, & challenger review
+│   ├── production-readiness/       # Controls checklist, monitoring telemetry, & deployment decision
+│   ├── stress-testing/             # Crisis replay shocks, liquidity exit TTL, & tail risk ES
+│   └── surveillance/               # Spoofing logs, OTR cancellations, & SEC 15c3-5 escalation
 │
 └── README.md
 ```
+
 
 
 

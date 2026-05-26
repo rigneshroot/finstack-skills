@@ -23,11 +23,11 @@ The strategy was evaluated using the **PR-Score** framework:
 Composite PR-Score: 36 / 100 [CRITICAL REJECT]
 ```
 
-*   **Data Integrity:** `45 / 100` (Degraded due to survivorship constituent bias)
-*   **Validation Quality:** `20 / 100` (Failed due to critical lookahead timing logic)
-*   **Risk Controls:** `50 / 100` (Concentration caps missing)
-*   **Execution Assumptions:** `15 / 100` (Flat 1bp transaction cost is highly optimistic)
-*   **Governance Evidence:** `50 / 100` (Incomplete out-of-sample data partitioning)
+- **Data Integrity:** `45 / 100` (Degraded due to survivorship constituent bias)
+- **Validation Quality:** `20 / 100` (Failed due to critical lookahead timing logic)
+- **Risk Controls:** `50 / 100` (Concentration caps missing)
+- **Execution Assumptions:** `15 / 100` (Flat 1bp transaction cost is highly optimistic)
+- **Governance Evidence:** `50 / 100` (Incomplete out-of-sample data partitioning)
 
 ---
 
@@ -41,7 +41,7 @@ Composite PR-Score: 36 / 100 [CRITICAL REJECT]
 > *Impact:* Applying a standard 1-day execution lag (calculating signals at Friday close and executing at Monday VWAP) reduces the strategy's annualized return from 22.4% to 9.2%.
 
 ### Bias 2: Constituent Survivorship Bias
-- **Finding:** The backtest used the static constituent list of the S&P 500 index from October 2025 retrospectively back to 2018. This excludes companies that defaulted, went bankrupt, or were acquired (e.g. SVB, Signature Bank, First Republic) over the backtest window.
+- **Finding:** The backtest used the static constituent list of the S&P 500 index from October 2025 retrospectively back to 2018. This excludes companies that defaulted, went bankrupt, or were acquired (e.g., SVB, Signature Bank, First Republic) over the backtest window.
 - **Impact:** Survivorship bias overstates the annualized return by **+2.4%** across the 7-year period.
 
 ### Bias 3: Optimistic Slippage and Transaction Cost Models

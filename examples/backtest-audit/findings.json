@@ -1,0 +1,6 @@
+{
+  "severity": "HIGH",
+  "issue": "Potential lookahead bias",
+  "evidence": "Feature uses future close prices",
+  "recommendation": "Restrict features to T-1 availability"
+}
